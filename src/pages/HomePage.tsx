@@ -3,16 +3,31 @@ import Chip from '@mui/material/Chip'
 import Container from '@mui/material/Container'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import { DoodleWaves, SketchDecorations } from '../components/sketch/SketchDecorations'
 
 /** Placeholder portrait for layout — swap with your real photo when ready. */
 const PLACEHOLDER_PORTRAIT =
   'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80'
+
+const navy = '#1a3554'
+const creamPaper = '#fffef6'
+const lightYellow = '#fff3c4'
+const lightPink = '#ffd6e8'
+const lightGreen = '#c5e8d0'
+const darkBrown = '#3d2918'
 
 const projectChips = [
   'Java game',
   'Task manager (frontend)',
   'Destination calculator (frontend)',
   'Recipe finder (frontend, vibe-coding)',
+] as const
+
+const chipStyles = [
+  { borderColor: '#7aab8a', bg: lightGreen, color: '#2d4a38' },
+  { borderColor: '#d48aa8', bg: lightPink, color: '#5c3040' },
+  { borderColor: '#c9a227', bg: lightYellow, color: darkBrown },
+  { borderColor: '#5a7a8f', bg: '#d4e8f0', color: '#243a5f' },
 ] as const
 
 export function HomePage() {
@@ -24,50 +39,32 @@ export function HomePage() {
         minHeight: '100vh',
         overflow: 'hidden',
         py: { xs: 4, md: 8 },
+        background: `
+          radial-gradient(ellipse 90% 60% at 10% 0%, ${lightYellow} 0%, transparent 55%),
+          radial-gradient(ellipse 70% 50% at 92% 8%, ${lightPink} 0%, transparent 50%),
+          radial-gradient(ellipse 65% 45% at 50% 100%, ${lightGreen} 0%, transparent 52%),
+          linear-gradient(180deg, #fdf6e9 0%, #faf0df 45%, #f7ead4 100%)
+        `,
       }}
     >
+      <SketchDecorations />
+
       <Box
         aria-hidden
         sx={{
           pointerEvents: 'none',
           position: 'absolute',
           inset: 0,
-          background:
-            'radial-gradient(ellipse 80% 55% at 15% 10%, rgba(139, 92, 246, 0.35), transparent 55%), radial-gradient(ellipse 70% 50% at 85% 20%, rgba(34, 211, 238, 0.22), transparent 50%), radial-gradient(ellipse 60% 45% at 50% 95%, rgba(236, 72, 153, 0.12), transparent 45%)',
-        }}
-      />
-      <Box
-        aria-hidden
-        sx={{
-          pointerEvents: 'none',
-          position: 'absolute',
-          top: '12%',
-          right: '-8%',
-          width: { xs: 280, md: 420 },
-          height: { xs: 280, md: 420 },
-          borderRadius: '50%',
-          filter: 'blur(80px)',
-          opacity: 0.45,
-          background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)',
-        }}
-      />
-      <Box
-        aria-hidden
-        sx={{
-          pointerEvents: 'none',
-          position: 'absolute',
-          bottom: '5%',
-          left: '-10%',
-          width: { xs: 260, md: 380 },
-          height: { xs: 260, md: 380 },
-          borderRadius: '50%',
-          filter: 'blur(72px)',
           opacity: 0.35,
-          background: 'linear-gradient(135deg, #ec4899, #6366f1)',
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M0 40h80M40 0v80' fill='none' stroke='%231a3554' stroke-opacity='0.06' stroke-width='0.8'/%3E%3C/svg%3E")`,
+          backgroundSize: '80px 80px',
         }}
       />
 
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+      <Container
+        maxWidth="lg"
+        sx={{ position: 'relative', zIndex: 1, pl: { xs: 2.5, sm: 3 }, pr: { xs: 2.5, sm: 3 } }}
+      >
         <Stack
           direction={{ xs: 'column', md: 'row' }}
           spacing={{ xs: 5, md: 6 }}
@@ -85,19 +82,21 @@ export function HomePage() {
               Front-end developer intern · Computer Science student
             </Typography>
 
-            <Typography
-              variant="h1"
-              component="h1"
-              sx={{
-                fontSize: { xs: '2.35rem', sm: '2.85rem', md: '3.35rem' },
-                background: 'linear-gradient(120deg, #f8fafc 0%, #e9d5ff 45%, #67e8f9 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
-              Interfaces, curiosity, and a roadmap to ML mastery
-            </Typography>
+            <Box>
+              <Typography
+                variant="h1"
+                component="h1"
+                sx={{
+                  fontSize: { xs: '2.25rem', sm: '2.75rem', md: '3.15rem' },
+                  color: navy,
+                }}
+              >
+                Interfaces, curiosity, and a roadmap to ML mastery
+              </Typography>
+              <Box sx={{ mt: 0.5 }}>
+                <DoodleWaves />
+              </Box>
+            </Box>
 
             <Typography variant="subtitle1" color="text.secondary" sx={{ fontSize: '1.05rem' }}>
               I&apos;m <strong>Nergis</strong> — a front-end developer intern who started coding in{' '}
@@ -109,12 +108,11 @@ export function HomePage() {
             <Box
               sx={{
                 p: 2.5,
-                borderRadius: 2,
-                border: '1px solid',
-                borderColor: 'rgba(255,255,255,0.12)',
-                background:
-                  'linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%)',
-                backdropFilter: 'blur(12px)',
+                borderRadius: 3,
+                border: '2px dashed',
+                borderColor: 'rgba(26, 53, 84, 0.28)',
+                backgroundColor: creamPaper,
+                boxShadow: '6px 6px 0 rgba(26, 53, 84, 0.12)',
               }}
             >
               <Typography variant="h3" component="h2" sx={{ fontSize: '1.1rem', mb: 1.5 }}>
@@ -128,15 +126,18 @@ export function HomePage() {
                 <strong>React + Vite</strong> across the board.
               </Typography>
               <Stack direction="row" flexWrap="wrap" gap={1} useFlexGap>
-                {projectChips.map((label) => (
+                {projectChips.map((label, i) => (
                   <Chip
                     key={label}
                     label={label}
                     size="small"
                     sx={{
-                      borderColor: 'rgba(167, 139, 250, 0.45)',
-                      color: 'primary.light',
-                      backgroundColor: 'rgba(139, 92, 246, 0.12)',
+                      borderColor: chipStyles[i].borderColor,
+                      color: chipStyles[i].color,
+                      backgroundColor: chipStyles[i].bg,
+                      fontWeight: 600,
+                      borderWidth: 2,
+                      borderStyle: 'solid',
                     }}
                     variant="outlined"
                   />
@@ -147,9 +148,11 @@ export function HomePage() {
             <Box
               sx={{
                 p: 2.5,
-                borderRadius: 2,
-                border: '1px solid rgba(34, 211, 238, 0.25)',
-                background: 'rgba(34, 211, 238, 0.06)',
+                borderRadius: 3,
+                border: '2px solid',
+                borderColor: 'rgba(92, 64, 50, 0.35)',
+                background: `linear-gradient(135deg, ${lightPink} 0%, ${creamPaper} 55%, ${lightGreen} 100%)`,
+                boxShadow: '4px 4px 0 rgba(61, 41, 24, 0.1)',
               }}
             >
               <Typography variant="h3" component="h2" sx={{ fontSize: '1.1rem', mb: 1 }}>
@@ -180,11 +183,29 @@ export function HomePage() {
               aria-hidden
               sx={{
                 position: 'absolute',
-                inset: -3,
-                borderRadius: 4,
-                background: 'linear-gradient(135deg, #a78bfa, #22d3ee, #f472b6)',
-                opacity: 0.85,
-                filter: 'blur(0.5px)',
+                top: -12,
+                right: -12,
+                width: 56,
+                height: 56,
+                borderRadius: '50%',
+                bgcolor: lightYellow,
+                border: `3px solid ${navy}`,
+                boxShadow: '3px 3px 0 rgba(26,53,84,0.2)',
+              }}
+            />
+            <Box
+              aria-hidden
+              sx={{
+                position: 'absolute',
+                bottom: 36,
+                left: -14,
+                width: 48,
+                height: 48,
+                borderRadius: 2,
+                bgcolor: lightGreen,
+                border: `3px solid ${navy}`,
+                transform: 'rotate(-8deg)',
+                boxShadow: '3px 3px 0 rgba(26,53,84,0.18)',
               }}
             />
             <Box
@@ -198,9 +219,10 @@ export function HomePage() {
                 height: 'auto',
                 aspectRatio: '4 / 5',
                 objectFit: 'cover',
-                borderRadius: 3.5,
-                border: '3px solid rgba(6, 6, 10, 0.85)',
-                boxShadow: '0 24px 80px rgba(0,0,0,0.45)',
+                borderRadius: 4,
+                border: `4px solid ${navy}`,
+                boxShadow: '12px 12px 0 rgba(26, 53, 84, 0.15), 0 16px 40px rgba(61, 41, 24, 0.12)',
+                bgcolor: creamPaper,
               }}
             />
             <Typography
