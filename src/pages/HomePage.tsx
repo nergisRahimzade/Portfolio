@@ -3,7 +3,6 @@ import Chip from '@mui/material/Chip'
 import Container from '@mui/material/Container'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import { DoodleWaves, SketchDecorations } from '../components/sketch/SketchDecorations'
 import homePageProfile from '../assets/homePageProfile.jpeg'
 
 /** Placeholder portrait for layout — swap with your real photo when ready. */
@@ -16,12 +15,7 @@ const deepNavy = '#081849'
 const cream = '#ECDFD2'
 const magentaPurple = '#893172'
 
-const projectChips = [
-  'Java game',
-  'Task manager (frontend)',
-  'Destination calculator (frontend)',
-  'Recipe finder (frontend, vibe-coding)',
-] as const
+const techStack = ['React', 'TypeScript', 'JavaScript', 'CSS', 'HTML', 'Java'] as const
 
 const chipStyles = [
   { borderColor: cream, bg: 'rgba(236, 223, 210, 0.08)', color: cream },
@@ -42,8 +36,6 @@ export function HomePage() {
         backgroundColor: deepNavy,
       }}
     >
-      <SketchDecorations />
-
       <Box
         aria-hidden
         sx={{
@@ -88,16 +80,11 @@ export function HomePage() {
               >
                 Interfaces, curiosity, and a roadmap to ML mastery
               </Typography>
-              <Box sx={{ mt: 0.5 }}>
-                <DoodleWaves />
-              </Box>
             </Box>
 
             <Typography variant="subtitle1" color="text.secondary" sx={{ fontSize: '1.05rem' }}>
-              I&apos;m <strong>Nergis</strong> — a front-end developer intern who started coding in{' '}
-              <strong>September 2024</strong>. I&apos;m still new to the software world, and I&apos;m
-              genuinely excited to keep learning: new tools, better patterns, and how far I can push
-              what I build on the web.
+              I&apos;m <strong>Nergis</strong>, a front-end developer intern who started coding in{' '}
+              <strong>September 2024</strong> — eager to learn fast and build better every week.
             </Typography>
 
             <Box
@@ -111,25 +98,22 @@ export function HomePage() {
               }}
             >
               <Typography variant="h3" component="h2" sx={{ fontSize: '1.1rem', mb: 1.5 }}>
-                What I&apos;ve been building
+                Tech Stack
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                I&apos;ve worked on a <strong>Java game</strong> project and several{' '}
-                <strong>frontend-only</strong> apps: a task manager, a destination calculator, and a
-                recipe finder (that last one was built with <strong>vibe-coding</strong> — a fun way
-                to move fast and experiment). For my React work I&apos;ve used{' '}
-                <strong>React + Vite</strong> across the board.
+                The tools I reach for most often while building modern web apps and learning computer
+                science fundamentals.
               </Typography>
               <Stack direction="row" flexWrap="wrap" gap={1} useFlexGap>
-                {projectChips.map((label, i) => (
+                {techStack.map((label, i) => (
                   <Chip
                     key={label}
                     label={label}
                     size="small"
                     sx={{
-                      borderColor: chipStyles[i].borderColor,
-                      color: chipStyles[i].color,
-                      backgroundColor: chipStyles[i].bg,
+                      borderColor: chipStyles[i % chipStyles.length].borderColor,
+                      color: chipStyles[i % chipStyles.length].color,
+                      backgroundColor: chipStyles[i % chipStyles.length].bg,
                       fontWeight: 600,
                       borderWidth: 2,
                       borderStyle: 'solid',
@@ -212,12 +196,15 @@ export function HomePage() {
                 display: 'block',
                 width: '100%',
                 height: 'auto',
-                aspectRatio: '4 / 5',
+                aspectRatio: '4 / 3.35',
                 objectFit: 'cover',
+                objectPosition: '50% 10%',
                 borderRadius: 4,
                 border: `4px solid ${cream}`,
                 boxShadow: '12px 12px 0 rgba(0, 0, 0, 0.26), 0 16px 40px rgba(0, 0, 0, 0.25)',
                 bgcolor: 'rgba(236, 223, 210, 0.08)',
+                transform: 'scale(1.08)',
+                transformOrigin: '50% 10%',
               }}
             />
             <Typography
