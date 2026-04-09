@@ -1,8 +1,8 @@
 import Box from '@mui/material/Box'
 
-const navy = '#213885'
-const brown = '#081849'
-const cream = '#ECDFD2'
+const navy = '#ECDFD2' // stroke on dark bg
+const brown = '#ECDFD2'
+const cream = 'rgba(236, 223, 210, 0.1)' // subtle fills
 const pink = '#893172'
 const green = '#CCCACC'
 const yellow = '#5F3475'

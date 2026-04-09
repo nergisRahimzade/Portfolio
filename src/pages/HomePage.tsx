@@ -12,11 +12,8 @@ const PLACEHOLDER_PORTRAIT =
 
 // Palette from Figma link:
 // https://www.figma.com/color-palette-generator/?colors=213885-081849-ECDFD2-CCCACC-5F3475-893172
-const navy = '#213885'
 const deepNavy = '#081849'
 const cream = '#ECDFD2'
-const paper = '#CCCACC'
-const purple = '#5F3475'
 const magentaPurple = '#893172'
 
 const projectChips = [
@@ -27,10 +24,10 @@ const projectChips = [
 ] as const
 
 const chipStyles = [
-  { borderColor: navy, bg: cream, color: deepNavy },
-  { borderColor: purple, bg: cream, color: purple },
-  { borderColor: magentaPurple, bg: cream, color: magentaPurple },
-  { borderColor: deepNavy, bg: cream, color: deepNavy },
+  { borderColor: cream, bg: 'rgba(236, 223, 210, 0.08)', color: cream },
+  { borderColor: cream, bg: 'rgba(95, 52, 117, 0.18)', color: cream },
+  { borderColor: cream, bg: 'rgba(137, 49, 114, 0.18)', color: cream },
+  { borderColor: cream, bg: 'rgba(236, 223, 210, 0.08)', color: cream },
 ] as const
 
 export function HomePage() {
@@ -42,7 +39,7 @@ export function HomePage() {
         minHeight: '100vh',
         overflow: 'hidden',
         py: { xs: 4, md: 8 },
-        backgroundColor: cream,
+        backgroundColor: deepNavy,
       }}
     >
       <SketchDecorations />
@@ -54,7 +51,7 @@ export function HomePage() {
           position: 'absolute',
           inset: 0,
           opacity: 0.18,
-          backgroundImage: `url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M0 40h80M40 0v80' fill='none' stroke='%23081849' stroke-opacity='0.09' stroke-width='0.9'/%3E%3C/svg%3E\")`,
+          backgroundImage: `url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M0 40h80M40 0v80' fill='none' stroke='%23ECDFD2' stroke-opacity='0.12' stroke-width='0.9'/%3E%3C/svg%3E\")`,
           backgroundSize: '80px 80px',
         }}
       />
@@ -86,7 +83,7 @@ export function HomePage() {
                 component="h1"
                 sx={{
                   fontSize: { xs: '2.25rem', sm: '2.75rem', md: '3.15rem' },
-                  color: deepNavy,
+                  color: cream,
                 }}
               >
                 Interfaces, curiosity, and a roadmap to ML mastery
@@ -108,9 +105,9 @@ export function HomePage() {
                 p: 2.5,
                 borderRadius: 3,
                 border: '2px dashed',
-                borderColor: 'rgba(8, 24, 73, 0.28)',
-                backgroundColor: paper,
-                boxShadow: '6px 6px 0 rgba(8, 24, 73, 0.12)',
+                borderColor: 'rgba(236, 223, 210, 0.28)',
+                backgroundColor: 'rgba(33, 56, 133, 0.35)',
+                boxShadow: '6px 6px 0 rgba(0, 0, 0, 0.25)',
               }}
             >
               <Typography variant="h3" component="h2" sx={{ fontSize: '1.1rem', mb: 1.5 }}>
@@ -148,9 +145,9 @@ export function HomePage() {
                 p: 2.5,
                 borderRadius: 3,
                 border: '2px solid',
-                borderColor: 'rgba(95, 52, 117, 0.45)',
-                backgroundColor: cream,
-                boxShadow: '4px 4px 0 rgba(8, 24, 73, 0.12)',
+                borderColor: 'rgba(236, 223, 210, 0.24)',
+                backgroundColor: 'rgba(95, 52, 117, 0.22)',
+                boxShadow: '4px 4px 0 rgba(0, 0, 0, 0.22)',
               }}
             >
               <Typography variant="h3" component="h2" sx={{ fontSize: '1.1rem', mb: 1 }}>
@@ -186,9 +183,9 @@ export function HomePage() {
                 width: 56,
                 height: 56,
                 borderRadius: '50%',
-                bgcolor: paper,
-                border: `3px solid ${navy}`,
-                boxShadow: '3px 3px 0 rgba(8,24,73,0.18)',
+                bgcolor: 'rgba(236, 223, 210, 0.12)',
+                border: `3px solid ${cream}`,
+                boxShadow: '3px 3px 0 rgba(0, 0, 0, 0.25)',
               }}
             />
             <Box
@@ -200,10 +197,10 @@ export function HomePage() {
                 width: 48,
                 height: 48,
                 borderRadius: 2,
-                bgcolor: cream,
-                border: `3px solid ${purple}`,
+                bgcolor: 'rgba(236, 223, 210, 0.1)',
+                border: `3px solid ${magentaPurple}`,
                 transform: 'rotate(-8deg)',
-                boxShadow: '3px 3px 0 rgba(8,24,73,0.16)',
+                boxShadow: '3px 3px 0 rgba(0, 0, 0, 0.22)',
               }}
             />
             <Box
@@ -218,9 +215,9 @@ export function HomePage() {
                 aspectRatio: '4 / 5',
                 objectFit: 'cover',
                 borderRadius: 4,
-                border: `4px solid ${deepNavy}`,
-                boxShadow: '12px 12px 0 rgba(8, 24, 73, 0.14), 0 16px 40px rgba(8, 24, 73, 0.12)',
-                bgcolor: paper,
+                border: `4px solid ${cream}`,
+                boxShadow: '12px 12px 0 rgba(0, 0, 0, 0.26), 0 16px 40px rgba(0, 0, 0, 0.25)',
+                bgcolor: 'rgba(236, 223, 210, 0.08)',
               }}
             />
             <Typography

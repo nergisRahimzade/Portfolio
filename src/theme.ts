@@ -6,7 +6,7 @@ import { createTheme } from '@mui/material/styles'
  */
 export const theme = createTheme({
   palette: {
-    mode: 'light',
+    mode: 'dark',
     primary: {
       main: '#213885',
       dark: '#081849',
@@ -18,14 +18,14 @@ export const theme = createTheme({
       contrastText: '#ECDFD2',
     },
     background: {
-      default: '#ECDFD2',
-      paper: '#CCCACC',
+      default: '#081849',
+      paper: '#213885',
     },
     text: {
-      primary: '#081849',
-      secondary: 'rgba(8, 24, 73, 0.75)',
+      primary: '#ECDFD2',
+      secondary: 'rgba(236, 223, 210, 0.78)',
     },
-    divider: 'rgba(8, 24, 73, 0.18)',
+    divider: 'rgba(236, 223, 210, 0.18)',
   },
   typography: {
     fontFamily: '"Nunito", "DM Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
@@ -34,18 +34,18 @@ export const theme = createTheme({
       fontWeight: 800,
       letterSpacing: '-0.03em',
       lineHeight: 1.1,
-      color: '#081849',
+      color: '#ECDFD2',
     },
     h2: {
       fontFamily: '"Syne", "Nunito", sans-serif',
       fontWeight: 700,
       letterSpacing: '-0.02em',
-      color: '#081849',
+      color: '#ECDFD2',
     },
     h3: {
       fontFamily: '"Syne", "Nunito", sans-serif',
       fontWeight: 700,
-      color: '#213885',
+      color: '#ECDFD2',
     },
     subtitle1: {
       lineHeight: 1.65,
@@ -68,7 +68,7 @@ export const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          scrollbarColor: 'rgba(33, 56, 133, 0.45) transparent',
+          scrollbarColor: 'rgba(236, 223, 210, 0.35) transparent',
         },
       },
     },
