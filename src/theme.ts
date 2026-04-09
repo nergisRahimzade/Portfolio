@@ -1,49 +1,31 @@
 import { createTheme } from '@mui/material/styles'
 
-/** Youthful palette: cream, light yellow, navy, dark brown + light green & pink accents */
+/**
+ * Palette from:
+ * https://www.figma.com/color-palette-generator/?colors=213885-081849-ECDFD2-CCCACC-5F3475-893172
+ */
 export const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#1a3554',
-      light: '#2d4a6e',
-      dark: '#0f2138',
-      contrastText: '#fffef8',
+      main: '#213885',
+      dark: '#081849',
+      contrastText: '#ECDFD2',
     },
     secondary: {
-      main: '#5c4032',
-      light: '#7d5c4a',
-      dark: '#3d2a20',
-      contrastText: '#fffef8',
+      main: '#5F3475',
+      dark: '#893172',
+      contrastText: '#ECDFD2',
     },
     background: {
-      default: '#fdf6e9',
-      paper: '#fffef6',
+      default: '#ECDFD2',
+      paper: '#CCCACC',
     },
     text: {
-      primary: '#3d2918',
-      secondary: 'rgba(61, 41, 24, 0.78)',
+      primary: '#081849',
+      secondary: 'rgba(8, 24, 73, 0.75)',
     },
-    success: {
-      main: '#6b9e7d',
-      light: '#c5e8d0',
-      dark: '#3d6b4d',
-    },
-    error: {
-      main: '#c97b8f',
-      light: '#ffd6e4',
-      dark: '#8f4a5c',
-    },
-    info: {
-      main: '#5a7a8f',
-      light: '#d4e8f0',
-      dark: '#2d4a5c',
-    },
-    warning: {
-      main: '#c9a227',
-      light: '#fff3c4',
-      dark: '#8a6e18',
-    },
+    divider: 'rgba(8, 24, 73, 0.18)',
   },
   typography: {
     fontFamily: '"Nunito", "DM Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
@@ -52,18 +34,18 @@ export const theme = createTheme({
       fontWeight: 800,
       letterSpacing: '-0.03em',
       lineHeight: 1.1,
-      color: '#1a3554',
+      color: '#081849',
     },
     h2: {
       fontFamily: '"Syne", "Nunito", sans-serif',
       fontWeight: 700,
       letterSpacing: '-0.02em',
-      color: '#1a3554',
+      color: '#081849',
     },
     h3: {
       fontFamily: '"Syne", "Nunito", sans-serif',
       fontWeight: 700,
-      color: '#243a5f',
+      color: '#213885',
     },
     subtitle1: {
       lineHeight: 1.65,
@@ -86,7 +68,7 @@ export const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          scrollbarColor: 'rgba(26, 53, 84, 0.35) transparent',
+          scrollbarColor: 'rgba(33, 56, 133, 0.45) transparent',
         },
       },
     },

@@ -4,17 +4,20 @@ import Container from '@mui/material/Container'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import { DoodleWaves, SketchDecorations } from '../components/sketch/SketchDecorations'
+import homePageProfile from '../assets/homePageProfile.jpeg'
 
 /** Placeholder portrait for layout — swap with your real photo when ready. */
 const PLACEHOLDER_PORTRAIT =
-  'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80'
+  homePageProfile
 
-const navy = '#1a3554'
-const creamPaper = '#fffef6'
-const lightYellow = '#fff3c4'
-const lightPink = '#ffd6e8'
-const lightGreen = '#c5e8d0'
-const darkBrown = '#3d2918'
+// Palette from Figma link:
+// https://www.figma.com/color-palette-generator/?colors=213885-081849-ECDFD2-CCCACC-5F3475-893172
+const navy = '#213885'
+const deepNavy = '#081849'
+const cream = '#ECDFD2'
+const paper = '#CCCACC'
+const purple = '#5F3475'
+const magentaPurple = '#893172'
 
 const projectChips = [
   'Java game',
@@ -24,10 +27,10 @@ const projectChips = [
 ] as const
 
 const chipStyles = [
-  { borderColor: '#7aab8a', bg: lightGreen, color: '#2d4a38' },
-  { borderColor: '#d48aa8', bg: lightPink, color: '#5c3040' },
-  { borderColor: '#c9a227', bg: lightYellow, color: darkBrown },
-  { borderColor: '#5a7a8f', bg: '#d4e8f0', color: '#243a5f' },
+  { borderColor: navy, bg: cream, color: deepNavy },
+  { borderColor: purple, bg: cream, color: purple },
+  { borderColor: magentaPurple, bg: cream, color: magentaPurple },
+  { borderColor: deepNavy, bg: cream, color: deepNavy },
 ] as const
 
 export function HomePage() {
@@ -39,12 +42,7 @@ export function HomePage() {
         minHeight: '100vh',
         overflow: 'hidden',
         py: { xs: 4, md: 8 },
-        background: `
-          radial-gradient(ellipse 90% 60% at 10% 0%, ${lightYellow} 0%, transparent 55%),
-          radial-gradient(ellipse 70% 50% at 92% 8%, ${lightPink} 0%, transparent 50%),
-          radial-gradient(ellipse 65% 45% at 50% 100%, ${lightGreen} 0%, transparent 52%),
-          linear-gradient(180deg, #fdf6e9 0%, #faf0df 45%, #f7ead4 100%)
-        `,
+        backgroundColor: cream,
       }}
     >
       <SketchDecorations />
@@ -55,8 +53,8 @@ export function HomePage() {
           pointerEvents: 'none',
           position: 'absolute',
           inset: 0,
-          opacity: 0.35,
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M0 40h80M40 0v80' fill='none' stroke='%231a3554' stroke-opacity='0.06' stroke-width='0.8'/%3E%3C/svg%3E")`,
+          opacity: 0.18,
+          backgroundImage: `url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M0 40h80M40 0v80' fill='none' stroke='%23081849' stroke-opacity='0.09' stroke-width='0.9'/%3E%3C/svg%3E\")`,
           backgroundSize: '80px 80px',
         }}
       />
@@ -88,7 +86,7 @@ export function HomePage() {
                 component="h1"
                 sx={{
                   fontSize: { xs: '2.25rem', sm: '2.75rem', md: '3.15rem' },
-                  color: navy,
+                  color: deepNavy,
                 }}
               >
                 Interfaces, curiosity, and a roadmap to ML mastery
@@ -110,9 +108,9 @@ export function HomePage() {
                 p: 2.5,
                 borderRadius: 3,
                 border: '2px dashed',
-                borderColor: 'rgba(26, 53, 84, 0.28)',
-                backgroundColor: creamPaper,
-                boxShadow: '6px 6px 0 rgba(26, 53, 84, 0.12)',
+                borderColor: 'rgba(8, 24, 73, 0.28)',
+                backgroundColor: paper,
+                boxShadow: '6px 6px 0 rgba(8, 24, 73, 0.12)',
               }}
             >
               <Typography variant="h3" component="h2" sx={{ fontSize: '1.1rem', mb: 1.5 }}>
@@ -150,9 +148,9 @@ export function HomePage() {
                 p: 2.5,
                 borderRadius: 3,
                 border: '2px solid',
-                borderColor: 'rgba(92, 64, 50, 0.35)',
-                background: `linear-gradient(135deg, ${lightPink} 0%, ${creamPaper} 55%, ${lightGreen} 100%)`,
-                boxShadow: '4px 4px 0 rgba(61, 41, 24, 0.1)',
+                borderColor: 'rgba(95, 52, 117, 0.45)',
+                backgroundColor: cream,
+                boxShadow: '4px 4px 0 rgba(8, 24, 73, 0.12)',
               }}
             >
               <Typography variant="h3" component="h2" sx={{ fontSize: '1.1rem', mb: 1 }}>
@@ -188,9 +186,9 @@ export function HomePage() {
                 width: 56,
                 height: 56,
                 borderRadius: '50%',
-                bgcolor: lightYellow,
+                bgcolor: paper,
                 border: `3px solid ${navy}`,
-                boxShadow: '3px 3px 0 rgba(26,53,84,0.2)',
+                boxShadow: '3px 3px 0 rgba(8,24,73,0.18)',
               }}
             />
             <Box
@@ -202,10 +200,10 @@ export function HomePage() {
                 width: 48,
                 height: 48,
                 borderRadius: 2,
-                bgcolor: lightGreen,
-                border: `3px solid ${navy}`,
+                bgcolor: cream,
+                border: `3px solid ${purple}`,
                 transform: 'rotate(-8deg)',
-                boxShadow: '3px 3px 0 rgba(26,53,84,0.18)',
+                boxShadow: '3px 3px 0 rgba(8,24,73,0.16)',
               }}
             />
             <Box
@@ -220,9 +218,9 @@ export function HomePage() {
                 aspectRatio: '4 / 5',
                 objectFit: 'cover',
                 borderRadius: 4,
-                border: `4px solid ${navy}`,
-                boxShadow: '12px 12px 0 rgba(26, 53, 84, 0.15), 0 16px 40px rgba(61, 41, 24, 0.12)',
-                bgcolor: creamPaper,
+                border: `4px solid ${deepNavy}`,
+                boxShadow: '12px 12px 0 rgba(8, 24, 73, 0.14), 0 16px 40px rgba(8, 24, 73, 0.12)',
+                bgcolor: paper,
               }}
             />
             <Typography

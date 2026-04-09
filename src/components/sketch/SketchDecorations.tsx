@@ -1,11 +1,11 @@
 import Box from '@mui/material/Box'
 
-const navy = '#1a3554'
-const brown = '#5c4032'
-const cream = '#fffef6'
-const pink = '#ffb8cf'
-const green = '#a8dcb8'
-const yellow = '#ffe566'
+const navy = '#213885'
+const brown = '#081849'
+const cream = '#ECDFD2'
+const pink = '#893172'
+const green = '#CCCACC'
+const yellow = '#5F3475'
 
 const sketchStroke = {
   fill: 'none',
