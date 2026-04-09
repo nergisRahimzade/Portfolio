@@ -11,7 +11,7 @@ const PLACEHOLDER_PORTRAIT = homePageProfile
 // https://www.figma.com/color-palette-generator/?colors=213885-081849-ECDFD2-CCCACC-5F3475-893172
 const deepNavy = '#081849'
 const cream = '#ECDFD2'
-const magentaPurple = '#893172'
+
 const paperLine = 'rgba(33, 56, 133, 0.22)'
 const paperInk = '#081849'
 
@@ -162,7 +162,7 @@ export function HomePage() {
           position: 'absolute',
           inset: 0,
           opacity: 0.18,
-          backgroundImage: `url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M0 40h80M40 0v80' fill='none' stroke='%23ECDFD2' stroke-opacity='0.12' stroke-width='0.9'/%3E%3C/svg%3E\")`,
+          backgroundImage: `url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22%3E%3Cpath d=%22M0 40h80M40 0v80%22 fill=%22none%22 stroke=%22%23ECDFD2%22 stroke-opacity=%220.12%22 stroke-width=%220.9%22/%3E%3C/svg%3E')`,
           backgroundSize: '80px 80px',
         }}
       />
@@ -204,7 +204,7 @@ export function HomePage() {
 
               <Typography variant="subtitle1" color="text.secondary" sx={{ fontSize: '1.05rem' }}>
                 I&apos;m <strong>Nergis</strong>, a front-end developer intern who started coding in{' '}
-                <strong>September 2024</strong> — eager to learn fast and build better every week.
+                <strong>September 2024</strong> — eager to learn fast and build better every day.
               </Typography>
 
               <Box
@@ -241,35 +241,7 @@ export function HomePage() {
                 flexShrink: 0,
               }}
             >
-              <Box
-                aria-hidden
-                sx={{
-                  position: 'absolute',
-                  top: -12,
-                  right: -12,
-                  width: 56,
-                  height: 56,
-                  borderRadius: '50%',
-                  bgcolor: 'rgba(236, 223, 210, 0.12)',
-                  border: `3px solid ${cream}`,
-                  boxShadow: '3px 3px 0 rgba(0, 0, 0, 0.25)',
-                }}
-              />
-              <Box
-                aria-hidden
-                sx={{
-                  position: 'absolute',
-                  bottom: 36,
-                  left: -14,
-                  width: 48,
-                  height: 48,
-                  borderRadius: 2,
-                  bgcolor: 'rgba(236, 223, 210, 0.1)',
-                  border: `3px solid ${magentaPurple}`,
-                  transform: 'rotate(-8deg)',
-                  boxShadow: '3px 3px 0 rgba(0, 0, 0, 0.22)',
-                }}
-              />
+         
               <Box
                 component="img"
                 src={PLACEHOLDER_PORTRAIT}
