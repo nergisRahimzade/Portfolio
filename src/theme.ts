@@ -9,11 +9,14 @@ export const theme = createTheme({
     mode: 'dark',
     primary: {
       main: '#213885',
+      // Explicit tints for links on dark backgrounds (auto-generated `light` was too faint).
+      light: '#A8BFFF',
       dark: '#081849',
       contrastText: '#ECDFD2',
     },
     secondary: {
       main: '#5F3475',
+      light: '#D8B8EC',
       dark: '#893172',
       contrastText: '#ECDFD2',
     },
@@ -70,6 +73,20 @@ export const theme = createTheme({
         body: {
           scrollbarColor: 'rgba(236, 223, 210, 0.35) transparent',
         },
+      },
+    },
+    MuiLink: {
+      defaultProps: {
+        underline: 'hover',
+      },
+      styleOverrides: {
+        root: ({ theme }) => ({
+          color: theme.palette.primary.light,
+          fontWeight: 600,
+          '&:hover': {
+            color: theme.palette.secondary.light,
+          },
+        }),
       },
     },
   },
