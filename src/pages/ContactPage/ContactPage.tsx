@@ -120,18 +120,6 @@ export function ContactPage() {
                     color: paperInk,
                   }}
                 >
-                  Contact details
-                </Typography>
-
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: 'rgba(8, 24, 73, 0.72)',
-                    lineHeight: `${RULED_LINE_PX}px`,
-                    mb: `${RULED_LINE_PX}px`,
-                    fontWeight: 700,
-                  }}
-                >
                   {contact.name}
                 </Typography>
 
