@@ -151,7 +151,14 @@ export function CertificatesPage() {
                       >
                         <Typography
                           variant="overline"
-                          sx={{ color: 'secondary.main', fontSize: '0.7rem', display: 'block', mb: 0.75 }}
+                          sx={{
+                            color: cream,
+                            fontSize: '0.7rem',
+                            fontWeight: 800,
+                            letterSpacing: '0.14em',
+                            display: 'block',
+                            mb: 0.75,
+                          }}
                         >
                           Description (add later)
                         </Typography>
