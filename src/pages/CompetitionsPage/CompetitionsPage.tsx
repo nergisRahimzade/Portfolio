@@ -6,7 +6,6 @@ import Container from '@mui/material/Container'
 import Divider from '@mui/material/Divider'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded'
 
 const cream = '#ECDFD2'
 
@@ -139,7 +138,6 @@ export function CompetitionsPage() {
                         {c.awardsWon ? (
                           <Stack direction="row" flexWrap="wrap" gap={1} useFlexGap sx={{ mb: 1.5 }}>
                             <Chip
-                              icon={<EmojiEventsRoundedIcon sx={{ color: cream }} />}
                               label={`🏆 ${c.awardsWon}`}
                               size="small"
                               variant="outlined"
@@ -148,7 +146,6 @@ export function CompetitionsPage() {
                                 bgcolor: 'rgba(95, 52, 117, 0.26)',
                                 color: cream,
                                 fontWeight: 800,
-                                '& .MuiChip-icon': { color: cream },
                               }}
                             />
                           </Stack>
