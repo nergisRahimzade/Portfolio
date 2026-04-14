@@ -6,6 +6,7 @@ import Container from '@mui/material/Container'
 import Divider from '@mui/material/Divider'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded'
 
 const cream = '#ECDFD2'
 
@@ -19,7 +20,7 @@ const cardSx = {
 type Competition = {
   name: string
   year: string
-  awardsWon: string
+  awardsWon?: string
 }
 
 const competitions: Competition[] = [
@@ -135,9 +136,23 @@ export function CompetitionsPage() {
                           </Typography>
                         </Box>
 
-                        <Stack direction="row" flexWrap="wrap" gap={1} useFlexGap sx={{ mb: 1.5 }}>
-                          <Chip label={c.awardsWon} size="small" color="secondary" variant="outlined" />
-                        </Stack>
+                        {c.awardsWon ? (
+                          <Stack direction="row" flexWrap="wrap" gap={1} useFlexGap sx={{ mb: 1.5 }}>
+                            <Chip
+                              icon={<EmojiEventsRoundedIcon sx={{ color: cream }} />}
+                              label={`🏆 ${c.awardsWon}`}
+                              size="small"
+                              variant="outlined"
+                              sx={{
+                                borderColor: 'rgba(236, 223, 210, 0.38)',
+                                bgcolor: 'rgba(95, 52, 117, 0.26)',
+                                color: cream,
+                                fontWeight: 800,
+                                '& .MuiChip-icon': { color: cream },
+                              }}
+                            />
+                          </Stack>
+                        ) : null}
 
                         <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.75 }}>
                           Add a short story here later (what you built, your role, and what you learned). When you share
