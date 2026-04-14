@@ -5,7 +5,6 @@ import Button from '@mui/material/Button'
 import Toolbar from '@mui/material/Toolbar'
 import { ThemeProvider } from '@mui/material/styles'
 import { BrowserRouter, Link as RouterLink, Route, Routes, useLocation } from 'react-router-dom'
-import { BackgroundPage } from './pages/BackgroundPage/BackgroundPage'
 import { CertificatesPage } from './pages/CertificatesPage/CertificatesPage'
 import { CompetitionsPage } from './pages/CompetitionsPage/CompetitionsPage'
 import { ContactPage } from './pages/ContactPage/ContactPage'
@@ -20,7 +19,6 @@ const navItems = [
   { to: '/resume', label: 'Resume' },
   { to: '/competitions', label: 'Competitions' },
   { to: '/certificates', label: 'Certificates' },
-  { to: '/background', label: 'Background' },
   { to: '/contact', label: 'Contact' },
 ] as const
 
@@ -83,7 +81,6 @@ function AppRoutes() {
           <Route path="/resume" element={<ResumePage />} />
           <Route path="/competitions" element={<CompetitionsPage />} />
           <Route path="/certificates" element={<CertificatesPage />} />
-          <Route path="/background" element={<BackgroundPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Box>
