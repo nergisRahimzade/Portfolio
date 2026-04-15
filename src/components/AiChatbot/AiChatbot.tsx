@@ -2,6 +2,7 @@ import { useMemo, useRef, useState } from 'react'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import CloseIcon from '@mui/icons-material/Close'
 import SendIcon from '@mui/icons-material/Send'
+import CircularProgress from '@mui/material/CircularProgress'
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
 import Divider from '@mui/material/Divider'
@@ -22,9 +23,9 @@ type ChatMessage = {
 }
 
 const QUICK_TOPICS = [
-  { label: 'Summarize projects', prompt: 'Summarize projects' },
-  { label: 'How can I contact Nergis?', prompt: 'How can I contact Nergis?' },
-  { label: "Tell me about Nergis's resume", prompt: "Tell me about Nergis's resume" },
+  { label: 'Summarize projects', prompt: 'Summarize projects shown in projects page.' },
+  { label: 'How can I contact Nergis?', prompt: 'Give me a bulleted list of contact information in contacts page.' },
+  { label: "Tell me about Nergis's resume", prompt: "Summarize Nergis's resume in bulleted list. Use the resume info in resume page." },
 ] as const
 
 function makeId() {
@@ -34,6 +35,7 @@ function makeId() {
 export function AiChatbot() {
   const [open, setOpen] = useState(false)
   const [draft, setDraft] = useState('')
+  const [loading, setLoading] = useState(false)
   const [messages, setMessages] = useState<ChatMessage[]>(() => [
     {
       id: makeId(),
@@ -44,7 +46,7 @@ export function AiChatbot() {
 
   const scrollRef = useRef<HTMLDivElement | null>(null)
 
-  const canSend = draft.trim().length > 0
+  const canSend = draft.trim().length > 0 && !loading
 
   const title = useMemo(() => 'Ask about this portfolio', [])
 
@@ -62,8 +64,44 @@ export function AiChatbot() {
 
     append('user', trimmed)
 
-    const answer = localAnswerForPrompt(trimmed)
-    append('assistant', answer)
+    setLoading(true)
+    try {
+      const apiMessages = messages
+        .filter((m) => m.role === 'user' || m.role === 'assistant')
+        .map((m) => ({ role: m.role, content: m.content }))
+
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: apiMessages, prompt: trimmed }),
+      })
+
+      const data = (await res.json()) as { text?: string; error?: string }
+
+      if (!res.ok || !data.text) {
+        const fallback = localAnswerForPrompt(trimmed)
+        append(
+          'assistant',
+          [
+            'OpenAI is not connected yet (or the server returned an error). Here’s a local answer from the site data:',
+            '',
+            fallback,
+            data.error ? `\n\nServer error: ${data.error}` : '',
+          ].join('\n'),
+        )
+        return
+      }
+
+      append('assistant', data.text)
+    } catch {
+      const fallback = localAnswerForPrompt(trimmed)
+      append(
+        'assistant',
+        ['Could not reach the AI server. Here’s a local answer from the site data:', '', fallback].join('\n'),
+      )
+    } finally {
+      setLoading(false)
+    }
   }
 
   function onSubmit() {
@@ -159,7 +197,7 @@ export function AiChatbot() {
                       sx={{
                         maxWidth: '92%',
                         whiteSpace: 'pre-wrap',
-                        borderRadius: 3,
+                        borderRadius: 1,
                         px: 1.5,
                         py: 1.25,
                         border: '1px solid',
@@ -198,7 +236,7 @@ export function AiChatbot() {
                 }}
               />
               <IconButton aria-label="Send" onClick={onSubmit} disabled={!canSend}>
-                <SendIcon />
+                {loading ? <CircularProgress size={18} /> : <SendIcon />}
               </IconButton>
             </Stack>
             <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1 }}>

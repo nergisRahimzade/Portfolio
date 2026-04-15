@@ -2,6 +2,7 @@
   {
     "name": "AI Agents in TypeScript with Generative AI",
     "description": "While the course wasn’t heavily focused on hands-on implementation, it provided a solid understanding of how AI agent frameworks are structured and how their internal processes work. Some of the key concepts I explored:How agent systems are designed in terms of cycles and workflows, The architecture behind tool usage and function-calling mechanisms,How AI agents are structured to interact with external systems.","year": "2026",
+    "from": "Vanderbilt University - Coursera",
     "tags": [
       "AI Agents",
       "Large Language Modeling",
