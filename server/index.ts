@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import express from 'express'
+import express, { type Request, type Response } from 'express'
 import cors from 'cors'
 import OpenAI from 'openai'
 import { getSiteContent } from './siteContent'
@@ -12,11 +12,11 @@ const app = express()
 app.use(cors())
 app.use(express.json({ limit: '1mb' }))
 
-app.get('/api/health', (_req, res) => {
+app.get('/api/health', (_req: Request, res: Response) => {
   res.json({ ok: true })
 })
 
-app.post('/api/chat', async (req, res) => {
+app.post('/api/chat', async (req: Request, res: Response) => {
   try {
     const apiKey = process.env.OPENAI_API_KEY
     if (!apiKey) {
