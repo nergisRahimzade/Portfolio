@@ -6,17 +6,17 @@ import Container from '@mui/material/Container'
 import Link from '@mui/material/Link'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import projectsListRaw from './projectsList.txt?raw'
+import projectsList from './projectsList.json'
 
 export type Project = {
   name: string
   description: string
   techStack: string[]
-  date: number
+  date: string
   githubRepoLink: string
 }
 
-const projects: Project[] = JSON.parse(projectsListRaw) as Project[]
+const projects: Project[] = projectsList as unknown as Project[]
 
 export function ProjectsPage() {
   return (

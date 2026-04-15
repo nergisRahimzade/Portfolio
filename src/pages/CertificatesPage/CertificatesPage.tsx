@@ -6,6 +6,7 @@ import Container from '@mui/material/Container'
 import Divider from '@mui/material/Divider'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import certificatesList from './certificatesList.json'
 
 const cream = '#ECDFD2'
 
@@ -18,20 +19,12 @@ const cardSx = {
 
 type Certificate = {
   name: string
-  date: string
-  from: string
-  related: string[]
-  description?: string
+  year: string
+  description: string
+  tags: string[]
 }
 
-const certificates: Certificate[] = [
-  {
-    name: 'AI Agents in TypeScript with Generative AI',
-    date: '2026',
-    from: 'Vanderbilt University',
-    related: ['TypeScript', 'AI Agents', 'Large Language Modeling', 'AI Workflows', 'Generative AI'],
-  },
-]
+const certificates: Certificate[] = certificatesList as unknown as Certificate[]
 
 export function CertificatesPage() {
   return (
@@ -91,7 +84,7 @@ export function CertificatesPage() {
 
                 <Stack spacing={2.5} divider={<Divider flexItem sx={{ borderColor: 'divider' }} />}>
                   {certificates.map((cert) => (
-                    <Box key={`${cert.name}-${cert.date}`}>
+                    <Box key={`${cert.name}-${cert.year}`}>
                       <Box
                         sx={{
                           display: 'flex',
@@ -115,16 +108,12 @@ export function CertificatesPage() {
                           {cert.name}
                         </Typography>
                         <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
-                          {cert.date}
+                          {cert.year}
                         </Typography>
                       </Box>
 
-                      <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
-                        From <Box component="span" sx={{ fontWeight: 800, color: cream }}>{cert.from}</Box>
-                      </Typography>
-
                       <Stack direction="row" flexWrap="wrap" gap={1} useFlexGap sx={{ mb: 2 }}>
-                        {cert.related.map((topic) => (
+                        {cert.tags.map((topic) => (
                           <Chip
                             key={topic}
                             label={topic}
@@ -160,11 +149,10 @@ export function CertificatesPage() {
                             mb: 0.75,
                           }}
                         >
-                          Description (add later)
+                          Description
                         </Typography>
                         <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.75 }}>
-                          I’ll add a short summary here once you share what you learned, what you built while taking it,
-                          and how you’ve applied it.
+                          {cert.description}
                         </Typography>
                       </Box>
                     </Box>

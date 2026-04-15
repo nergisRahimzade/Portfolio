@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Tower Defense Game",
+    "description": "A tower defense game built with Java and JavaFX. This was my first coding project. I built this project with 2 teammates as a part of term project during my first year of university. At the time we didn't know what was backend and frontend. The logic of the game was written in Java and the interface was written in JavaFX. I worked on designing and implementing of dragging and placing of towers, hitting enemies, shooting with different weapons and last but not least, coding the tower figurines:). I learned how to work with a team, connecting different pieces of code in one place. On the technical side, I had a better grasp of Java and JavaFX by the time we finished the project.",
+    "techStack": ["Java", "JavaFX"],
+    "date": "2025",
+    "githubRepoLink": "https://github.com/nergisRahimzade/TermProject"
+  },
+  {
+    "name": "Task Management Website",
+    "description": "A simple task manager web application. This was my first frontend project and - as you can see in the webpage - no design template was used:). I built this project using React, TypeScript, CSS, HTML and MUI. This project lets you add, edit, delete, filter tasks and changing the task status directly without having to click edit button. This was the first project I worked with TypeScript. The project has a very simple interface to work with and I think this project can be further implemented into tablets for families with toddlers or little kids to use. Or to only use for saving appointments, meetings with notification/reminder feature.",
+    "techStack": ["React", "TypeScript", "MUI", "CSS", "HTML", "Vite"],
+    "date": "2025",
+    "githubRepoLink": "https://github.com/nergisRahimzade/task-management-app"
+  },
+  {
+    "name": "Distance Calculator Website",
+    "description": "A website that calculates and displays the distance and duration between 2 cities. This was the first project that I worked with external APIs. The duration varies depending on which type of transportation is used. The transportation types are by foot, car and plane. This webpage also displays the temperature, weather, local date & time of origin and destination cities as well as activities to do, tourist attractions and emergency contact numbers of the destination city. And last but not least, the webpage has dark and light theme you can choose from. All of the displayed data was fetched using a few different external APIs. This project can be further be improved by having a better UI, a well implemented backend for all of the data that is displayed and turning it into an mobile application.",
+    "techStack": ["External API", "React", "TypeScript", "MUI", "CSS", "HTML", "Vite"],
+    "date": "2026",
+    "githubRepoLink": "https://github.com/nergisRahimzade/my-distance-calculator"
+  },
+  {
+    "name": "Check&Chef Pantry",
+    "description": "A recipe website that lets you either search for a recipe or choose ingredients to filter the best recipe that matches your ingredients. This was the first project I won with at a hackathon and the first project that I created using vibe coding. I built this project in my first hackathon with 3 teammates. We didn't use any backend but instead we fetched the recipe data from a Google Sheet that the client of the project (The Pantry) provided us. This project has filtering and searching filters. The users can filter out the ingredient they have to get the matched recipe they can try. The system actually order recipes based on how many ingredients of the user matches the recipe and will display the recipes like this: \"Good Match\", \"Great Match\", \"Perfect Match\". Also, the users can search recipes by name or by ingredients manually. Once the recipe is chosen, instructions on how to cook the meal will appear alongside with which ingredients are available at The Pantry for the users to pick up. This project can further be improved by adding authorization of student (targeted audience is students) and staff, real-time results of ingredients available at The Pantry, integrated AI to create recipes of own, having a larger database for all the data used in the website.",
+    "techStack": ["AI", "Vibe Coding", "React", "TypeScript", "MUI", "CSS", "HTML", "Vite"],
+    "date": "2026",
+    "githubRepoLink": "https://github.com/nergisRahimzade/SacHacks-Project---CRC-Team"
+  }
+]
