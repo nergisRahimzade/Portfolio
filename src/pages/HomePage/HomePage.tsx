@@ -64,8 +64,24 @@ export function HomePage() {
                   variant="h1"
                   component="h1"
                   sx={{
-                    fontSize: { xs: '2.25rem', sm: '2.75rem', md: '3.15rem' },
+                    fontSize: { xs: '2.8rem', sm: '3.5rem', md: '4rem' },
+                    fontWeight: 800,
                     color: cream,
+                    lineHeight: 1.1,
+                    letterSpacing: '-0.02em',
+                  }}
+                >
+                  Nergis Rahimzade
+                </Typography>
+                <Typography
+                  variant="h2"
+                  component="p"
+                  sx={{
+                    mt: 1.5,
+                    fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.6rem' },
+                    fontWeight: 400,
+                    color: 'rgba(236, 223, 210, 0.7)',
+                    lineHeight: 1.35,
                   }}
                 >
                   Interfaces, curiosity, and a roadmap to ML mastery

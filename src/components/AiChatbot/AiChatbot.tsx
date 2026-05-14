@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react'
+﻿import { useRef, useState } from 'react'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import CloseIcon from '@mui/icons-material/Close'
 import SendIcon from '@mui/icons-material/Send'
@@ -12,7 +12,7 @@ import IconButton from '@mui/material/IconButton'
 import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
-import { localAnswerForPrompt, siteContent } from './siteContent.ts'
+import { siteContent } from './siteContent.ts'
 
 type ChatRole = 'user' | 'assistant'
 
@@ -48,7 +48,7 @@ export function AiChatbot() {
 
   const canSend = draft.trim().length > 0 && !loading
 
-  const title = useMemo(() => 'AI Chatbot', [])
+  const title = 'AI Chatbot'
 
   function append(role: ChatRole, content: string) {
     setMessages((prev) => [...prev, { id: makeId(), role, content }])
@@ -80,25 +80,13 @@ export function AiChatbot() {
       const data = (await res.json()) as { text?: string; error?: string }
 
       if (!res.ok || !data.text) {
-        const fallback = localAnswerForPrompt(trimmed)
-        append(
-          'assistant',
-          [
-            'Gemini is not connected yet (or the server returned an error). Here’s a local answer from the site data instead:',
-            fallback,
-            data.error ? `\n\nServer error: ${data.error}` : '',
-          ].join('\n'),
-        )
+        append('assistant', data.error ?? 'Something went wrong. Please try again.')
         return
       }
 
       append('assistant', data.text)
     } catch {
-      const fallback = localAnswerForPrompt(trimmed)
-      append(
-        'assistant',
-        ['Could not reach the AI server. Here’s a local answer from the site data:', '', fallback].join('\n'),
-      )
+      append('assistant', 'Could not reach the server. Please check your connection and try again.')
     } finally {
       setLoading(false)
     }
