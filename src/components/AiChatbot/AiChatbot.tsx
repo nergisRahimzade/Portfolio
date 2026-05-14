@@ -70,7 +70,8 @@ export function AiChatbot() {
         .filter((m) => m.role === 'user' || m.role === 'assistant')
         .map((m) => ({ role: m.role, content: m.content }))
 
-      const res = await fetch('http://localhost:3000/api/chat', {
+      const apiBase = import.meta.env.VITE_API_URL ?? 'http://localhost:3000'
+      const res = await fetch(`${apiBase}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: apiMessages, prompt: trimmed }),
