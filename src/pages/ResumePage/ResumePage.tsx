@@ -211,7 +211,7 @@ export function ResumePage() {
                     Marmara University, Istanbul
                   </Typography>
                   <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
-                    September 2024 – June 2025
+                     2024 – June 2025
                   </Typography>
                 </Box>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
