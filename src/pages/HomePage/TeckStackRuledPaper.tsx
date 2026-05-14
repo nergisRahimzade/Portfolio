@@ -1,11 +1,8 @@
 import Box from '@mui/material/Box'
-import Container from '@mui/material/Container'
-import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 
 // Palette from Figma link:
 // https://www.figma.com/color-palette-generator/?colors=213885-081849-ECDFD2-CCCACC-5F3475-893172
-const deepNavy = '#081849'
 const cream = '#ECDFD2'
 
 const paperLine = 'rgba(33, 56, 133, 0.22)'
