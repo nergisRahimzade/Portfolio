@@ -11,7 +11,6 @@ import { ContactPage } from './pages/ContactPage/ContactPage'
 import { HomePage } from './pages/HomePage/HomePage'
 import { ProjectsPage } from './pages/ProjectsPage/ProjectsPage'
 import { ResumePage } from './pages/ResumePage/ResumePage'
-import { AiChatbot } from './components/AiChatbot/AiChatbot'
 import { theme } from './theme'
 
 const navItems = [
@@ -85,7 +84,6 @@ function AppRoutes() {
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Box>
-      <AiChatbot />
     </>
   )
 }
