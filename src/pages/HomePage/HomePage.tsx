@@ -2,7 +2,7 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import homePageProfile from '../assets/homePageProfile.jpeg'
+import homePageProfile from '../../assets/homePageProfile.jpeg'
 import { TechStackRuledPaper } from './TeckStackRuledPaper.tsx'
 
 /** Placeholder portrait for layout — swap with your real photo when ready. */
@@ -12,9 +12,6 @@ const PLACEHOLDER_PORTRAIT = homePageProfile
 // https://www.figma.com/color-palette-generator/?colors=213885-081849-ECDFD2-CCCACC-5F3475-893172
 const deepNavy = '#081849'
 const cream = '#ECDFD2'
-
-const paperLine = 'rgba(33, 56, 133, 0.22)'
-const paperInk = '#081849'
 
 export function HomePage() {
   return (
@@ -76,7 +73,7 @@ export function HomePage() {
               </Box>
 
               <Typography variant="subtitle1" color="text.secondary" sx={{ fontSize: '1.05rem' }}>
-                I&apos;m <strong>Nergis</strong>, a front-end developer intern who started coding in{' '}
+                I&apos;m <strong>Nergis Rahimzade</strong>, a front-end developer intern who started coding in{' '}
                 <strong>September 2024</strong> — eager to learn fast and build better every day.
               </Typography>
 
