@@ -11,5 +11,17 @@
       "Generative AI",
       "TypeScript"
     ]
+  },
+  {
+    "name": "Google Prompting Essentials",
+    "description": "Completed this hands-on course taught by AI experts at Google, covering how to write clear and effective prompts for generative AI tools using a structured 5-step framework: task, context, references, evaluate, and iterate. Through real-world exercises, I developed skills in using AI to draft content, summarize documents, analyze data, and tackle complex projects — while also building responsible AI practices into my workflow. Earned a certificate from Google upon completion.",
+    "year": "2026",
+    "from": "Google",
+    "tags": [
+      "Prompting",
+      "Large Language Models",
+      "Generative AI",
+      "Gemini"
+    ]
   }
 ]
