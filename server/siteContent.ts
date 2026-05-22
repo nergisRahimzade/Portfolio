@@ -55,7 +55,7 @@ export async function getSiteContent(): Promise<SiteContent> {
   ])
 
   cached = {
-    person: { fullName: 'Nergis Rahimzade' },
+    person: { fullName: 'Nergiz Rahimzade' },
     contact: {
       email: 'nergisrahimzade123@gmail.com',
       linkedin: 'https://www.linkedin.com/in/nergiz-rahimzade-183967337/',

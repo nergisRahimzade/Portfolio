@@ -24,8 +24,8 @@ type ChatMessage = {
 
 const QUICK_TOPICS = [
   { label: 'Summarize projects', prompt: 'Summarize projects shown in projects page.' },
-  { label: 'How can I contact Nergis?', prompt: 'Give me a bulleted list of contact information in contacts page.' },
-  { label: "Tell me about Nergis's resume", prompt: "Summarize Nergis's resume in bulleted list. Use the resume info in resume page." },
+  { label: 'How can I contact Nergiz?', prompt: 'Give me a bulleted list of contact information in contacts page.' },
+  { label: "Tell me about Nergiz's resume", prompt: "Summarize Nergiz's resume in bulleted list. Use the resume info in resume page." },
 ] as const
 
 function makeId() {

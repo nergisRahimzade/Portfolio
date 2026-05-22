@@ -26,7 +26,7 @@ export type SiteCertificate = {
 
 export const siteContent = {
   person: {
-    fullName: 'Nergis Rahimzade',
+    fullName: 'Nergiz Rahimzade',
   },
   contact: {
     email: 'nergisrahimzade123@gmail.com',
@@ -48,7 +48,7 @@ export function localAnswerForPrompt(prompt: string): string {
       return `- ${proj.name} (${proj.date}) — ${topTech}. GitHub: ${proj.githubRepoLink}`
     })
     return [
-      `Here are Nergis’s projects (${projects.length}):`,
+      `Here are Nergiz’s projects (${projects.length}):`,
       ...lines,
       '',
       'If you want, ask: “Tell me more about <project name>”.',
@@ -58,7 +58,7 @@ export function localAnswerForPrompt(prompt: string): string {
   if (p.includes('contact') || p.includes('reach') || p.includes('email') || p.includes('linkedin')) {
     const { email, linkedin, github } = siteContent.contact
     return [
-      'You can contact Nergis here:',
+      'You can contact Nergiz here:',
       `- Email: ${email}`,
       `- LinkedIn: ${linkedin}`,
       `- GitHub: ${github}`,
@@ -68,7 +68,7 @@ export function localAnswerForPrompt(prompt: string): string {
   if (p.includes('resume') || p.includes('cv')) {
     return [
       'Resume page summary:',
-      '- Open the “Resume” tab to view Nergis’s CV content.',
+      '- Open the “Resume” tab to view Nergzs’s CV content.',
       '- If you tell me what you want (internship, junior role, ML track), I can help summarize it for that goal once the OpenAI step is connected.',
     ].join('\n')
   }

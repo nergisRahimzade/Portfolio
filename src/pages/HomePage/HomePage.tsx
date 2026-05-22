@@ -71,7 +71,7 @@ export function HomePage() {
                     letterSpacing: '-0.02em',
                   }}
                 >
-                  Nergis Rahimzade
+                  Nergiz Rahimzade
                 </Typography>
                 <Typography
                   variant="h2"
@@ -89,7 +89,7 @@ export function HomePage() {
               </Box>
 
               <Typography variant="subtitle1" color="text.secondary" sx={{ fontSize: '1.05rem' }}>
-                I&apos;m <strong>Nergis Rahimzade</strong>, a front-end developer intern who started coding in{' '}
+                I&apos;m <strong>Nergiz Rahimzade</strong>, a front-end developer intern who started coding in{' '}
                 <strong>September 2024</strong> — eager to learn fast and build better every day.
               </Typography>
 

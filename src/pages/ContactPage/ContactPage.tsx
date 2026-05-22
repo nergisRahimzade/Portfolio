@@ -13,7 +13,7 @@ const paperInk = '#081849'
 const RULED_LINE_PX = 28
 
 const contact = {
-  name: 'Nergis Rahimzade',
+  name: 'Nergiz Rahimzade',
   email: 'nergisrahimzade123@gmail.com',
   linkedin: 'https://www.linkedin.com/in/nergiz-rahimzade-183967337/',
   github: 'https://github.com/nergisRahimzade',
