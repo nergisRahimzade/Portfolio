@@ -10,5 +10,11 @@
       "description": "This hackathon was my first big hackathon, with 400+ participants and 130+ projects. Me and my team built TransferBuddy AI, a web application that helps California community college students with their transfer process powered by AI. I worked on AI integraiton, AI API usage, backend - basically everything except the frontend. I learned how to use AI APIs, how to integrate them into a web application, how to manage backend and how to connect frontend-backend-AI. ",
       "year": "2026",
       "awardsWon": ""
+   },
+   {
+      "name": "HackStorm 2.0",
+      "description": "HackStorm 2.0 was my first AIoT hackathon and the project that pushed me the furthest outside my comfort zone. Me and my teammate built SmartCane - an AI-powered smart cane that gives blind and visually impaired users active, always-on environmental awareness. The cane detects forward obstacles via ultrasonic sensors, overhead hazards and stairs via computer vision, traffic lights, elevator arrivals and can even describe the surrounding scene on demand using llama-4-scout model via Groq API. A fall detection system via an accelerometer triggers an SOS with GPS location. I worked on the AI and computer vision side, implementing features using Python, Microsoft Windows embedded TTS, llama-4-scout, and the OpenAI API. This project made me realize how impactful technology can be when it is built with a real human need in mind. This was my most challenging hackathon so far and I am glad I was able to work on a project that helps visually impaired people.",
+      "year": "2026",
+      "awardsWon": "2nd place in AIoT category"
    }
 ]

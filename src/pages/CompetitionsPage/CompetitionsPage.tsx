@@ -175,11 +175,10 @@ export function CompetitionsPage() {
                     color: cream,
                   }}
                 >
-                  Photos (coming next)
+                  
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.75 }}>
-                  When you send the hackathon photos, I’ll add a responsive, cropped gallery that matches the site’s
-                  card style (with captions and optional “view full” modal).
+                  
                 </Typography>
               </Stack>
             </CardContent>

@@ -42,13 +42,13 @@
     "name": "Check&Chef Pantry",
     "description": "A recipe website that lets you either search for a recipe or choose ingredients to filter the best recipe that matches your ingredients. This was the first project I won with at a hackathon and the first project that I created using vibe coding. I built this project in my first hackathon with 3 teammates. We didn't use any backend but instead we fetched the recipe data from a Google Sheet that the client of the project (The Pantry) provided us. This project has filtering and searching filters. The users can filter out the ingredient they have to get the matched recipe they can try. The system actually order recipes based on how many ingredients of the user matches the recipe and will display the recipes like this: \"Good Match\", \"Great Match\", \"Perfect Match\". Also, the users can search recipes by name or by ingredients manually. Once the recipe is chosen, instructions on how to cook the meal will appear alongside with which ingredients are available at The Pantry for the users to pick up. This project can further be improved by adding authorization of student (targeted audience is students) and staff, real-time results of ingredients available at The Pantry, integrated AI to create recipes of own, having a larger database for all the data used in the website.",
     "techStack": [
-      "Vibe Coding",
       "React",
       "TypeScript",
       "MUI",
       "CSS",
       "HTML",
-      "Vite"
+      "Vite",
+      "Vibe Coding"
     ],
     "date": "2026",
     "githubRepoLink": "https://github.com/nergisRahimzade/SacHacks-Project---CRC-Team"
@@ -58,15 +58,35 @@
     "description": "A web application that helps California community college students with their transfer process powered by AI. I worked on AI integration, AI API usage, backend - basically everything except the frontend. For AI application, I used Gemini 2.5 pro model with Google Search Grounding. Our AI chatbot provided ANY question about transfer process by fetching live-data from ASSIST.org, USCIS and other sites that informs students about transfer process as well as regulations that international students have to follow. This was my first AI application and honestly, I cannot believe at the amount of things I learned from this hackathon.",
     "techStack": [
       "AI",
-      "Vibe Coding",
       "React",
       "TypeScript",
       "MUI",
       "CSS",
       "HTML",
-      "Vite"
+      "Vite",
+      "Vibe Coding"
     ],
     "date": "2026",
     "githubRepoLink": "https://github.com/NathanRivera1/TransferBuddy-AI/tree/demo"
+  },
+  {
+    "name": "Smart Cane",
+    "description": "An AI-powered smart cane that gives blind and visually impaired users passive, always-on environmental awareness — no sweeping required. Built at HackStorm 2.0 with 2 teammates. The cane uses an HC-SR04 ultrasonic sensor for forward obstacle detection with proximity-based beep alerts, a camera angled upward for overhead hazard detection (overhangs, low branches, scaffolding), and computer vision for stair/drop-off detection, traffic light reading, elevator arrival recognition, head-chest level obstacle warnings, and so much more for warning the user everything they need to be aware of. An always active scene reading feature uses llama-4-scout via Groq API to describe the surroundings through an sound output. An accelerometer detects falls and triggers a beeping sound. I worked on AI integration, computer vision features using Python, OpenCV, scene reading with llama-4-scout model, the alert system, and overall software architecture. This project can be further improved by adding a companion mobile app that can share GPS location in when a fall is detected via accelerometer.",
+    "techStack": [
+      "AI",
+      "Hardware",
+      "Groq API",
+      "Computer Vision",
+      "AI/ML",
+      "Vibe Coding",
+      "Python",
+      "OpenCV",
+      "YOLOv8",
+      "OpenAI GPT-4o",
+      "Arduino",
+      "pyserial"
+    ],
+    "date": "2026",
+    "githubRepoLink": "https://github.com/nergisRahimzade/HackStorm-2.0"
   }
 ]
