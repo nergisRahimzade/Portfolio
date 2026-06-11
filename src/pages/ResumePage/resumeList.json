@@ -1,0 +1,124 @@
+{
+  "header": {
+    "overline": "CV · Professional summary",
+    "title": "Resume",
+    "summary": "A concise view of my experience, education, and projects — aligned with what you'll find across this site."
+  },
+  "contact": {
+    "name": "Nergiz Rahimzade",
+    "title": "Front-end developer intern · Computer science student",
+    "address": "1503 Fulton Ave, Sacramento, CA",
+    "phoneLabel": "(442) 359-2299",
+    "phoneHref": "tel:+14423592299",
+    "email": "nergisrahimzade123@gmail.com",
+    "githubUrl": "https://github.com/nergisRahimzade",
+    "githubLabel": "github.com/nergisRahimzade"
+  },
+  "experience": [
+    {
+      "organization": "Irisco Solutions, Istanbul",
+      "dates": "November 2025 – Present",
+      "role": "Front End Developer Intern",
+      "bullets": [
+        "Develop responsive user interfaces using HTML, CSS, and JavaScript.",
+        "Collaborate with developers to implement UI components and improve usability.",
+        "Apply best practices for clean, maintainable front-end code."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "organization": "Cosumnes River College, Sacramento",
+      "dates": "August 2026 – June 2029",
+      "role": "Computer Science Student",
+      "bullets": [
+        "Transferred here after completing a year of university education in Turkey."
+      ]
+    },
+    {
+      "organization": "Marmara University, Istanbul",
+      "dates": "September 2024 – June 2025",
+      "role": "Computer Engineering Student",
+      "bullets": [
+        "GPA: 3.52 / 4.00."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Tower Defense Game",
+      "meta": "Apr 2024 · Java, JavaFX",
+      "bullets": [
+        "Developed a tower defense game in a team of three using Java and JavaFX.",
+        "Implemented enemy movement, tower placement, and game logic."
+      ]
+    },
+    {
+      "name": "MUI Practice Website",
+      "meta": "Nov 2025 · React, MUI",
+      "bullets": [
+        "Built a website to practice using Material UI components.",
+        "Customized themes and responsive layouts using MUI."
+      ]
+    },
+    {
+      "name": "Task Management Website",
+      "meta": "Nov 2025 · React, TypeScript",
+      "bullets": [
+        "Built a task management web application with React and TypeScript.",
+        "Implemented component-based architecture and state management."
+      ]
+    },
+    {
+      "name": "Distance Calculator Website",
+      "meta": "Dec 2025 · React, TypeScript",
+      "bullets": [
+        "Created a web application that calculates distance and travel duration between two cities.",
+        "Integrated several external APIs to fetch real-time distance and duration data as well as weather, emergency contact number, local date & time, list of activities to do in the destination city."
+      ]
+    },
+    {
+      "name": "Check&Chef Pantry",
+      "meta": "Feb 2026 · React, MUI, TypeScript",
+      "bullets": [
+        "Built this website with teammates in a 24 hour hackathon — SacHacks.",
+        "Implemented the code for our website; we didn't use any backend and a collection of data was provided to us via Google Sheets.",
+        "Used an external API to get the data and used React, MUI for the frontend."
+      ]
+    },
+    {
+      "name": "TransferBuddy AI",
+      "meta": "May 2026 · Gemini-2.5-flash, Web Search, AI",
+      "bullets": [
+        "TransferBuddy is an AI application for California community college students to help with their transfer process.",
+        "Built this for HackDavis with teammates; I implemented AI integration, Express JS backend, and testing AI.",
+        "The transfer process refers to community college students transferring to a 4-year university for their Bachelor's degree. We plan to take this project further and ship it as a mobile application by August 2026."
+      ]
+    },
+    {
+      "name": "Smart Cane",
+      "meta": "May 2026 · Llama-4-scout, Computer Vision, TTS",
+      "bullets": [
+        "SmartCane is created for visually impaired people to help with their everyday lives.",
+        "Built this for HackStorm with a teammate; I implemented computer vision using the llama-4-scout model via Groq API, text-to-speech using Microsoft Embedded TTS, and the overall software structure.",
+        "SmartCane warns the user about everything they need to be aware of — from elevator arrivals and steep edges/staircases to crowded places and available seats relative to the user."
+      ]
+    }
+  ],
+  "skills": [
+    "Java",
+    "C/C++",
+    "CSS",
+    "HTML",
+    "JavaScript",
+    "React",
+    "Problem Solving",
+    "Creative thinking",
+    "Collaboration skills"
+  ],
+  "languages": [
+    { "name": "English", "level": "Professional" },
+    { "name": "Turkish", "level": "Native / Bilingual" },
+    { "name": "Persian", "level": "Native / Bilingual" }
+  ]
+}

@@ -8,6 +8,7 @@ import Divider from '@mui/material/Divider'
 import Link from '@mui/material/Link'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import resumeList from './resumeList.json'
 
 const cream = '#ECDFD2'
 
@@ -29,7 +30,39 @@ const chipProps = {
   variant: 'outlined' as const,
 }
 
-type BulletItem = { text: string }
+type ResumeEntry = {
+  organization: string
+  dates: string
+  role?: string
+  bullets?: string[]
+}
+
+type ResumeProject = {
+  name: string
+  meta: string
+  bullets: string[]
+}
+
+type ResumeData = {
+  header: { overline: string; title: string; summary: string }
+  contact: {
+    name: string
+    title: string
+    address: string
+    phoneLabel: string
+    phoneHref: string
+    email: string
+    githubUrl: string
+    githubLabel: string
+  }
+  experience: ResumeEntry[]
+  education: ResumeEntry[]
+  projects: ResumeProject[]
+  skills: string[]
+  languages: { name: string; level: string }[]
+}
+
+const resume = resumeList as unknown as ResumeData
 
 function ResumeSectionCard({
   title,
@@ -60,25 +93,59 @@ function ResumeSectionCard({
   )
 }
 
-function BulletList({ items }: { items: BulletItem[] }) {
+function BulletList({ items }: { items: string[] }) {
   return (
     <Stack component="ul" spacing={1} sx={{ m: 0, pl: 2.25 }}>
-      {items.map((item) => (
+      {items.map((text) => (
         <Typography
-          key={item.text}
+          key={text}
           component="li"
           variant="body2"
           color="text.secondary"
           sx={{ lineHeight: 1.75, display: 'list-item' }}
         >
-          {item.text}
+          {text}
         </Typography>
       ))}
     </Stack>
   )
 }
 
+function EntryItem({
+  organization,
+  dates,
+  role,
+  roleBold,
+  bullets,
+}: ResumeEntry & { roleBold?: boolean }) {
+  const hasBullets = Boolean(bullets && bullets.length > 0)
+  return (
+    <Box>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: 1, columnGap: 2, mb: 1 }}>
+        <Typography variant="subtitle1" sx={{ fontWeight: 700, color: cream }}>
+          {organization}
+        </Typography>
+        <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
+          {dates}
+        </Typography>
+      </Box>
+      {role ? (
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{ mb: hasBullets ? 1.5 : 0, fontWeight: roleBold ? 600 : undefined }}
+        >
+          {role}
+        </Typography>
+      ) : null}
+      {hasBullets ? <BulletList items={bullets as string[]} /> : null}
+    </Box>
+  )
+}
+
 export function ResumePage() {
+  const { header, contact, experience, education, projects, skills, languages } = resume
+
   return (
     <Box
       component="main"
@@ -105,14 +172,13 @@ export function ResumePage() {
         <Stack spacing={3}>
           <Stack spacing={1.5}>
             <Typography variant="overline" sx={{ color: 'secondary.main', fontSize: '0.75rem' }}>
-              CV · Professional summary
+              {header.overline}
             </Typography>
             <Typography variant="h1" component="h1" sx={{ fontSize: { xs: '2rem', md: '2.5rem' } }}>
-              Resume
+              {header.title}
             </Typography>
             <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 720 }}>
-              A concise view of my experience, education, and projects — aligned with what you&apos;ll find across
-              this site.
+              {header.summary}
             </Typography>
           </Stack>
 
@@ -130,36 +196,36 @@ export function ResumePage() {
                   color: cream,
                 }}
               >
-                Nergiz Rahimzade
+                {contact.name}
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                Front-end developer intern · Computer science student
+                {contact.title}
               </Typography>
 
               <Stack spacing={1.25} divider={<Divider flexItem sx={{ borderColor: 'divider' }} />}>
                 <Typography variant="body2" color="text.secondary">
-                  1503 Fulton Ave, Sacramento, CA
+                  {contact.address}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  <Link href="tel:+14423592299" color="primary.light" underline="hover">
-                    (442) 359-2299
+                  <Link href={contact.phoneHref} color="primary.light" underline="hover">
+                    {contact.phoneLabel}
                   </Link>
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  <Link href="mailto:nergisrahimzade123@gmail.com" color="primary.light" underline="hover">
-                    nergisrahimzade123@gmail.com
+                  <Link href={`mailto:${contact.email}`} color="primary.light" underline="hover">
+                    {contact.email}
                   </Link>
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   GitHub:{' '}
                   <Link
-                    href="https://github.com/nergisRahimzade"
+                    href={contact.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     color="primary.light"
                     underline="hover"
                   >
-                    github.com/nergisRahimzade
+                    {contact.githubLabel}
                   </Link>
                 </Typography>
               </Stack>
@@ -167,174 +233,37 @@ export function ResumePage() {
           </Card>
 
           <ResumeSectionCard title="Experience">
-            <Box>
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: 1, columnGap: 2, mb: 1 }}>
-                <Typography variant="subtitle1" sx={{ fontWeight: 700, color: cream }}>
-                  Irisco Solutions, Istanbul
-                </Typography>
-                <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
-                  November 2025 – Present
-                </Typography>
-              </Box>
-              <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5, fontWeight: 600 }}>
-                Front-end developer intern
-              </Typography>
-              <BulletList
-                items={[
-                  { text: 'Develop responsive user interfaces using HTML, CSS, and JavaScript.' },
-                  { text: 'Collaborate with developers to implement UI components and improve usability.' },
-                  { text: 'Apply best practices for clean, maintainable front-end code.' },
-                ]}
-              />
-            </Box>
+            <Stack spacing={3}>
+              {experience.map((item) => (
+                <EntryItem key={item.organization} {...item} roleBold />
+              ))}
+            </Stack>
           </ResumeSectionCard>
 
           <ResumeSectionCard title="Education">
             <Stack spacing={3}>
-              <Box>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: 1, columnGap: 2, mb: 0.5 }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 700, color: cream }}>
-                    Cosumnes River College, Sacramento
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
-                    March 2026 – Present
-                  </Typography>
-                </Box>
-                <Typography variant="body2" color="text.secondary">
-                  Computer science student
-                </Typography>
-              </Box>
-
-              <Box>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: 1, columnGap: 2, mb: 1 }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 700, color: cream }}>
-                    Marmara University, Istanbul
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
-                     2024 – June 2025
-                  </Typography>
-                </Box>
-                <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
-                  Computer engineering student
-                </Typography>
-                <BulletList items={[{ text: 'GPA: 3.52 / 4.00.' }]} />
-              </Box>
-
-              <Box>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: 1, columnGap: 2, mb: 1 }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 700, color: cream }}>
-                    Prof. Dr. Fuat Sezgin Science High School, Istanbul
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
-                    October 2020 – June 2024
-                  </Typography>
-                </Box>
-                <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
-                  High school diploma
-                </Typography>
-                <BulletList
-                  items={[
-                    { text: 'Graduated with 96% average.' },
-                    {
-                      text: 'Ranked top 0.3% among 3+ million students in Turkey’s national university entrance exam.',
-                    },
-                  ]}
-                />
-              </Box>
+              {education.map((item) => (
+                <EntryItem key={item.organization} {...item} />
+              ))}
             </Stack>
           </ResumeSectionCard>
 
           <ResumeSectionCard title="Projects">
-            <Stack spacing={3}>
-              <Box>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: 1, columnGap: 2, mb: 1 }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 700, color: cream }}>
-                    Tower Defense Game
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
-                    April 2024 · Java, JavaFX
-                  </Typography>
-                </Box>
-                <BulletList
-                  items={[
-                    { text: 'Developed a tower defense game in a team of three using Java and JavaFX.' },
-                    { text: 'Implemented enemy movement, tower placement, and game logic.' },
-                  ]}
+            <Stack spacing={3} divider={<Divider sx={{ borderColor: 'divider' }} />}>
+              {projects.map((project) => (
+                <EntryItem
+                  key={project.name}
+                  organization={project.name}
+                  dates={project.meta}
+                  bullets={project.bullets}
                 />
-              </Box>
-
-              <Divider sx={{ borderColor: 'divider' }} />
-
-              <Box>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: 1, columnGap: 2, mb: 1 }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 700, color: cream }}>
-                    Task Management Website
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
-                    November 2025 · React, TypeScript
-                  </Typography>
-                </Box>
-                <BulletList
-                  items={[
-                    { text: 'Built a task management web application with React and TypeScript.' },
-                    { text: 'Implemented component-based architecture and state management.' },
-                  ]}
-                />
-              </Box>
-
-              <Divider sx={{ borderColor: 'divider' }} />
-
-              <Box>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: 1, columnGap: 2, mb: 1 }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 700, color: cream }}>
-                    Distance Calculator Website
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
-                    December 2025 · React, TypeScript
-                  </Typography>
-                </Box>
-                <BulletList
-                  items={[
-                    { text: 'Created a web application that calculates distance and travel duration between two cities.' },
-                    { text: 'Integrated an external API to fetch real-time distance and duration data.' },
-                  ]}
-                />
-              </Box>
-
-              <Divider sx={{ borderColor: 'divider' }} />
-
-              <Box>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: 1, columnGap: 2, mb: 1 }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 700, color: cream }}>
-                    MUI Practice Website
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
-                    November 2025 · React, MUI
-                  </Typography>
-                </Box>
-                <BulletList
-                  items={[
-                    { text: 'Built a website to practice using Material UI components.' },
-                    { text: 'Customized themes and responsive layouts using MUI.' },
-                  ]}
-                />
-              </Box>
+              ))}
             </Stack>
           </ResumeSectionCard>
 
           <ResumeSectionCard title="Skills">
             <Stack direction="row" flexWrap="wrap" gap={1} useFlexGap>
-              {[
-                'Java',
-                'C/C++',
-                'CSS',
-                'HTML',
-                'JavaScript',
-                'React',
-                'Problem solving',
-                'Creative thinking',
-                'Collaboration',
-              ].map((skill) => (
+              {skills.map((skill) => (
                 <Chip key={skill} label={skill} {...chipProps} />
               ))}
             </Stack>
@@ -342,24 +271,14 @@ export function ResumePage() {
 
           <ResumeSectionCard title="Languages">
             <Stack spacing={1}>
-              <Typography variant="body2" color="text.secondary">
-                <Box component="span" sx={{ fontWeight: 700, color: cream }}>
-                  English
-                </Box>{' '}
-                — Professional
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                <Box component="span" sx={{ fontWeight: 700, color: cream }}>
-                  Turkish
-                </Box>{' '}
-                — Native / bilingual
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                <Box component="span" sx={{ fontWeight: 700, color: cream }}>
-                  Persian
-                </Box>{' '}
-                — Native / bilingual
-              </Typography>
+              {languages.map((language) => (
+                <Typography key={language.name} variant="body2" color="text.secondary">
+                  <Box component="span" sx={{ fontWeight: 700, color: cream }}>
+                    {language.name}
+                  </Box>{' '}
+                  — {language.level}
+                </Typography>
+              ))}
             </Stack>
           </ResumeSectionCard>
         </Stack>
