@@ -71,7 +71,7 @@
   },
   {
     "name": "Smart Cane",
-    "description": "An AI-powered smart cane that gives blind and visually impaired users passive, always-on environmental awareness — no sweeping required. Built at HackStorm 2.0 with 2 teammates. The cane uses an HC-SR04 ultrasonic sensor for forward obstacle detection with proximity-based beep alerts, a camera angled upward for overhead hazard detection (overhangs, low branches, scaffolding), and computer vision for stair/drop-off detection, traffic light reading, elevator arrival recognition, head-chest level obstacle warnings, and so much more for warning the user everything they need to be aware of. An always active scene reading feature uses llama-4-scout via Groq API to describe the surroundings through an sound output. An accelerometer detects falls and triggers a beeping sound. I worked on AI integration, computer vision features using Python, OpenCV, scene reading with llama-4-scout model, the alert system, and overall software architecture. This project can be further improved by adding a companion mobile app that can share GPS location in when a fall is detected via accelerometer.",
+    "description": "An AI-powered smart cane that gives blind and visually impaired users passive, always-on environmental awareness — no sweeping required. Built at HackStorm 2.0 with 2 teammates. The cane uses an HC-SR04 ultrasonic sensor for forward obstacle detection with proximity-based beep alerts, a camera angled upward for overhead hazard detection (overhangs, low branches, scaffolding), and computer vision for stair/drop-off detection, traffic light reading, elevator arrival recognition, head-chest level obstacle warnings, and so much more for warning the user everything they need to be aware of. An always active scene reading feature uses llama-4-scout via Groq API to describe the surroundings through an sound output. An accelerometer detects falls and triggers a beeping sound. I worked on AI integration, computer vision features using Python, scene reading with llama-4-scout model, the alert system, and overall software architecture. This project can be further improved by adding a companion mobile app that can share GPS location in when a fall is detected via accelerometer.",
     "techStack": [
       "AI",
       "Hardware",
@@ -80,11 +80,8 @@
       "AI/ML",
       "Vibe Coding",
       "Python",
-      "OpenCV",
-      "YOLOv8",
-      "OpenAI GPT-4o",
-      "Arduino",
-      "pyserial"
+      "llama-4-scout",
+      "Arduino"
     ],
     "date": "2026",
     "githubRepoLink": "https://github.com/nergisRahimzade/HackStorm-2.0"
