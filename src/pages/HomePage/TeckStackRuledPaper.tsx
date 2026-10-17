@@ -111,7 +111,17 @@ export function TechStackRuledPaper() {
             Things I use day-to-day — written like a little checklist.
           </Typography>
 
-          <Box component="ul" sx={{ listStyle: 'none', m: 0, p: 0 }}>
+          <Box
+            component="ul"
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+              columnGap: { xs: 1.5, sm: 3 },
+              listStyle: 'none',
+              m: 0,
+              p: 0,
+            }}
+          >
             {skills.map((item) => (
               <Box
                 key={item}
@@ -119,7 +129,8 @@ export function TechStackRuledPaper() {
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 1.5,
+                  gap: { xs: 0.75, sm: 1.5 },
+                  minWidth: 0,
                   minHeight: RULED_LINE_PX,
                   lineHeight: `${RULED_LINE_PX}px`,
                 }}
@@ -142,6 +153,7 @@ export function TechStackRuledPaper() {
                     fontFamily: '"Nunito", sans-serif',
                     fontWeight: 700,
                     letterSpacing: '0.01em',
+                    overflowWrap: 'anywhere',
                     color: paperInk,
                   }}
                 >
