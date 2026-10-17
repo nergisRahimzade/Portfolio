@@ -125,5 +125,21 @@
     ],
     "date": "2026",
     "githubRepoLink": "https://github.com/nergisRahimzade/plainly/tree/master"
+  },
+  {
+    "name": "Transfer Tracker",
+    "description": "An AI-powered transfer planning application that helps California community college students prepare for counselor appointments with a personalized, term-by-term roadmap. Transfer Tracker combines Cal-GETC general education requirements, major preparation, and student-imported ASSIST articulation agreements. The agreement importer preserves AND-vs-OR course requirements and flags requirements marked No Course Articulated, helping students identify gaps that a generic plan can miss. Its AP credit engine handles separate Cal-GETC, UC, and CSU unit values, exam caps, and area assignments without double-counting credit. Students can edit their roadmap, track completed courses and AP scores, and use an AI assistant. Guest plans save locally, while Google sign-in and Supabase enable account syncing across devices with explicit conflict resolution. Original agreement PDFs are not stored, and the AI API key stays in a Cloudflare Worker. The app supports planning and informed conversations with a counselor; it does not replace academic advising.",
+    "techStack": [
+      "AI",
+      "React",
+      "JavaScript",
+      "Vite",
+      "Supabase",
+      "Google Sign-In",
+      "Cloudflare Workers",
+      "CSS"
+    ],
+    "date": "2026",
+    "githubRepoLink": "https://github.com/BreezyAGD/TransferTracker"
   }
 ]

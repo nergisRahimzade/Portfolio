@@ -8,7 +8,26 @@ const cream = '#ECDFD2'
 const paperLine = 'rgba(33, 56, 133, 0.22)'
 const paperInk = '#081849'
 
-const techStack = ['React', 'TypeScript', 'JavaScript', 'CSS', 'HTML', 'Java'] as const
+const skills = [
+  'React',
+  'TypeScript',
+  'JavaScript',
+  'CSS',
+  'HTML',
+  'Java',
+  'Next.js',
+  'Node.js',
+  'Express.js',
+  'Supabase',
+  'Vercel',
+  'Expo Go',
+  'FastAPI',
+  'Vite',
+  'Vibe Coding',
+  'Presentation',
+  'Pitch',
+  'C++',
+] as const
 
 const RULED_LINE_PX = 28
 
@@ -17,7 +36,7 @@ export function TechStackRuledPaper() {
   return (
     <Box
       component="section"
-      aria-labelledby="tech-stack-heading"
+      aria-labelledby="skills-heading"
       sx={{
         borderRadius: 2,
         overflow: 'hidden',
@@ -66,7 +85,7 @@ export function TechStackRuledPaper() {
 
         <Box sx={{ pl: { xs: 2.5, sm: 3.25 } }}>
           <Typography
-            id="tech-stack-heading"
+            id="skills-heading"
             variant="h3"
             component="h2"
             sx={{
@@ -78,7 +97,7 @@ export function TechStackRuledPaper() {
               color: paperInk,
             }}
           >
-            Tech Stack
+            Skills
           </Typography>
 
           <Typography
@@ -93,7 +112,7 @@ export function TechStackRuledPaper() {
           </Typography>
 
           <Box component="ul" sx={{ listStyle: 'none', m: 0, p: 0 }}>
-            {techStack.map((item) => (
+            {skills.map((item) => (
               <Box
                 key={item}
                 component="li"

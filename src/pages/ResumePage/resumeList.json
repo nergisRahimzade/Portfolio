@@ -95,6 +95,15 @@
         "Implemented computer vision using the llama-4-scout model via Groq API, text-to-speech using Microsoft Embedded TTS, and overall software structure.",
         "Warns the user about elevator arrivals, steep edges/staircases, crowded places, and available seats relative to the user."
       ]
+    },
+    {
+      "name": "Transfer Tracker",
+      "meta": "React, JavaScript, Supabase, Cloudflare Workers, AI | 2026",
+      "bullets": [
+        "Built an AI-powered transfer planner combining Cal-GETC requirements, major preparation, and student-imported ASSIST agreements into editable term-by-term roadmaps.",
+        "Implemented agreement parsing that preserves AND/OR course logic and flags unarticulated requirements, plus AP credit rules for Cal-GETC, UC, and CSU unit caps and area assignments.",
+        "Added local autosave and Supabase account syncing with Google sign-in and revision conflict resolution; kept original PDFs out of storage and AI API credentials in a Cloudflare Worker."
+      ]
     }
   ],
   "skills": [
